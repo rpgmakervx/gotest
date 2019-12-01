@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 func main() {
 	switchParam(1, 2)
 	s1, s2, _ := multiValue()
@@ -46,7 +45,7 @@ func testConst() {
 
 func testString() {
 	var data string = "hello世界"
-	for index, wd := range data  {
+	for index, wd := range data {
 		fmt.Printf("index %d, word: %c\n", index, wd)
 	}
 }

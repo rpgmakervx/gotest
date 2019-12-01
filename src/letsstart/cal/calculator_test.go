@@ -1,7 +1,7 @@
 package cal
 
-
 import "testing"
+
 func TestAdd(t *testing.T) {
 	result := Add(20, 38)
 	if result != 8.0 {
