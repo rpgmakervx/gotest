@@ -1,12 +1,8 @@
-package main
+package testcollections
 
 import "fmt"
 
-func main() {
-	testSlice()
-}
-
-func testArray() {
+func TestArray() {
 	week := [7]string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 	time := [12]int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 	for index, w := range week {

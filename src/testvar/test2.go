@@ -1,27 +1,19 @@
-package main
+package testvar
 
 import "fmt"
 
-func main() {
-	switchParam(1, 2)
-	s1, s2, _ := multiValue()
-	fmt.Println(s1, s2)
-	testConst()
-	testString()
-}
-
-func switchParam(x int, y int) {
+func SwitchParam(x int, y int) {
 	x, y = y, x
 	fmt.Printf("x:%d, y:%d\n", x, y)
 }
 
-func multiValue() (str1, str2, str3 string) {
+func MultiValue() (str1, str2, str3 string) {
 	str1 = "hello"
 	str2 = "world"
 	return
 }
 
-func testConst() {
+func TestConst() {
 	const Pi float64 = 3.1459265358979323846
 	const (
 		KB  int64 = 1024
@@ -43,7 +35,7 @@ func testConst() {
 	fmt.Printf("first letter is %s\n", str)
 }
 
-func testString() {
+func TestString() {
 	var data string = "hello世界"
 	for index, wd := range data {
 		fmt.Printf("index %d, word: %c\n", index, wd)
