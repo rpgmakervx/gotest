@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"testcollections"
+	"testfunc"
 	"testifelse"
 	"testvar"
 )
@@ -21,4 +22,15 @@ func main() {
 	fmt.Println("please input a variable:")
 	fmt.Scanf("%d", &x)
 	fmt.Printf("x is %d\n", x)
+	testvar.TestAlias()
+	x, err := testfunc.TestFunction(100, 20)
+	x, err = testfunc.TestFunction(100, 0)
+	if err != nil {
+		fmt.Println("see error msg:", err.Error())
+	} else {
+		fmt.Println("x is ", x)
+	}
+	testfunc.TestAnonymous()
+	testfunc.TestClosure()
+	testfunc.TestClosure()
 }

@@ -13,6 +13,7 @@ func MultiValue() (str1, str2, str3 string) {
 	return
 }
 
+// const可以对标其他语言中的枚举
 func TestConst() {
 	const Pi float64 = 3.1459265358979323846
 	const (
@@ -35,9 +36,24 @@ func TestConst() {
 	fmt.Printf("first letter is %s\n", str)
 }
 
+//字符串遍历过程中每一个字符类型是rune
 func TestString() {
 	var data string = "hello世界"
 	for index, wd := range data {
 		fmt.Printf("index %d, word: %c\n", index, wd)
 	}
+}
+
+func TestConvert() {
+	//var flag bool
+	//flag = bool(1) 布尔值是不兼容类型
+	var char int8 = 'a'
+	var data int = int(char)
+	fmt.Println("data:", data)
+}
+
+func TestAlias() {
+	type mytype int32
+	var data mytype = 100
+	fmt.Printf("my type is:%T\n", data)
 }
