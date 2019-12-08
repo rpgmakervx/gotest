@@ -12,8 +12,13 @@ func TestArray() {
 	for index, t := range time {
 		fmt.Printf("time is %d, addr:%p\n", t, &time[index])
 	}
+	time2 := [12]int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	time3 := [12]int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14}
+
+	fmt.Println("equals 1:", time == time2)
+	fmt.Println("equals 2:", time == time3)
 }
-func testSlice() {
+func TestSlice() {
 	array1 := [11]int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 	array2 := make([]int32, 12)
 	array2 = array1[:]
