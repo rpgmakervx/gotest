@@ -26,15 +26,23 @@ func TestSlice() {
 }
 
 // [low: high: max], len = high - low, cap = max - low
+//切片左闭右开
 func testVisit() {
 	var array []int
-	array = append(array, 1, 2, 3, 4, 5)
+	array = append(array, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 	var subArray = array[0:3:5]
 	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
 	subArray = array[1:3:5]
 	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
 	subArray = array[1:3:3]
 	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
+
+	subArray = array[2:5]
+	subSubArray := subArray[1:7]
+	fmt.Println("subArray is ", subArray, " array:", array, " subSubArray:", subSubArray)
+	subSubArray[1] = 100
+	fmt.Println("subArray is ", subArray, " array:", array, " subSubArray:", subSubArray)
+
 }
 
 func testSliceCreate() {
