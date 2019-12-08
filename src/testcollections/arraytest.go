@@ -17,8 +17,44 @@ func TestArray() {
 
 	fmt.Println("equals 1:", time == time2)
 	fmt.Println("equals 2:", time == time3)
+
+	changeArray(&time3)
+	fmt.Println("equals 2:", time == time3)
 }
 func TestSlice() {
+	testVisit()
+}
+
+// [low: high: max], len = high - low, cap = max - low
+func testVisit() {
+	var array []int
+	array = append(array, 1, 2, 3, 4, 5)
+	var subArray = array[0:3:5]
+	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
+	subArray = array[1:3:5]
+	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
+	subArray = array[1:3:3]
+	fmt.Println("subArray is ", subArray, " cap:", cap(subArray), " len:", len(subArray))
+}
+
+func testSliceCreate() {
+	var array []int
+	array = append(array, 1)
+	fmt.Println("slice append: ", array, " cap:", cap(array), " len:", len(array))
+	array = append(array, 2)
+	fmt.Println("slice append: ", array, " cap:", cap(array), " len:", len(array))
+	array = append(array, 3)
+	fmt.Println("slice append: ", array, " cap:", cap(array), " len:", len(array))
+	array = append(array, 4)
+	fmt.Println("slice append: ", array, " cap:", cap(array), " len:", len(array))
+	array = append(array, 5, 6, 7)
+	fmt.Println("slice append: ", array, " cap:", cap(array), " len:", len(array))
+	array = make([]int, 4)
+	array = append(array, 1, 2, 3, 4, 5)
+	fmt.Println("new slice append: ", array, " cap:", cap(array), " len:", len(array))
+}
+
+func testCommonSlice() {
 	array1 := [11]int32{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 	array2 := make([]int32, 12)
 	array2 = array1[:]
@@ -40,5 +76,7 @@ func TestSlice() {
 	fmt.Println("s1", slice1, "s2", slice2)
 	copy(slice2, slice1[3:])
 	fmt.Println("s1", slice1, "s2", slice2)
-
+}
+func changeArray(array *[12]int32) {
+	(*array)[0] = 19
 }

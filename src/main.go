@@ -1,9 +1,6 @@
 package main
 
-import (
-	"testcollections"
-	"teststring"
-)
+import "testcollections"
 
 func main() {
 	//testvar.SwitchParam(1, 2)
@@ -32,6 +29,8 @@ func main() {
 	//testfunc.TestClosure()
 	//testfunc.TestClosure()
 	//pointer.TetsPointer();
-	testcollections.TestArray()
-	teststring.TestString()
+	//testcollections.TestArray()
+	//teststring.TestString()
+	//testtime.TestTime()
+	testcollections.TestSlice()
 }

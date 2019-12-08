@@ -2,6 +2,7 @@ package teststring
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -10,6 +11,9 @@ func TestString() {
 	testContains()
 	testIndex()
 	testReplaceAndCountAndRepeat()
+	testLowUp()
+	testSplitAndJoin()
+	testTransfer()
 }
 
 func testPrSuf() {
@@ -62,4 +66,27 @@ func testSplitAndJoin() {
 		fmt.Println("index:", index, " word:", s)
 	}
 	fmt.Println("contact:", result)
+
+	var str3 = "I have a dream"
+	segments = strings.Fields(str3)
+	fmt.Println("segment fields:", segments)
+}
+
+func testLowUp() {
+	var str = " I have a dream that on day I will go to the UK"
+	var upper = strings.ToUpper(str)
+	var lower = strings.ToLower(upper)
+	fmt.Println("origin", str, "upper:", upper)
+	fmt.Println("origin", str, "lower:", lower)
+}
+
+func testTransfer() {
+	var str = "10"
+	num, _ := strconv.Atoi(str)
+	fmt.Printf("num convert from str:%d, %T\n", num, num)
+	str = strconv.Itoa(num)
+	fmt.Printf("str convert from num:%s, %T\n", str, str)
+	var fstr = "10.5"
+	fnum, _ := strconv.ParseFloat(fstr, 32)
+	fmt.Printf("fstr convert from fnum:%s, %T\n", fstr, fnum)
 }
