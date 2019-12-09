@@ -1,6 +1,6 @@
 package main
 
-import "testcollections"
+import "teststruct"
 
 func main() {
 	//testvar.SwitchParam(1, 2)
@@ -32,5 +32,6 @@ func main() {
 	//testcollections.TestArray()
 	//teststring.TestString()
 	//testtime.TestTime()
-	testcollections.TestSlice()
+	//testcollections.TestSlice()
+	teststruct.TestStruct()
 }
