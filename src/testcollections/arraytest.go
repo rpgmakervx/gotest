@@ -22,7 +22,8 @@ func TestArray() {
 	fmt.Println("equals 2:", time == time3)
 }
 func TestSlice() {
-	testVisit()
+	//testVisit()
+	testExpand()
 }
 
 // [low: high: max], len = high - low, cap = max - low
@@ -43,6 +44,12 @@ func testVisit() {
 	subSubArray[1] = 100
 	fmt.Println("subArray is ", subArray, " array:", array, " subSubArray:", subSubArray)
 
+}
+
+//make 第一个数是len, 第二个是cap
+func testExpand() {
+	var array = make([]int, 0, 10)
+	fmt.Print("cap:", cap(array), " len:", len(array))
 }
 
 func testSliceCreate() {
