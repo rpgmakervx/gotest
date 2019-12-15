@@ -6,6 +6,7 @@ import (
 	"unsafe"
 )
 
+//同理首字母小写不能被外部包引用
 type JobInfo struct {
 	id      string
 	jobType int
